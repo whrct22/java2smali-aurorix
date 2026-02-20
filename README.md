@@ -1,40 +1,48 @@
 # Java2Smali
 
-Java2Smali is an Android editor/workbench for writing Java and converting it to Smali, with workspace management, package-folder structure, dependency browsing, and release-oriented build/export flow.
+一个面向 Android 的 Java→Smali 编辑与转换工具，支持多工作区、包结构文件管理、依赖浏览、搜索替换与 DEX 导出，适合移动端快速验证 Java 代码到 Smali 的转换结果。
 
-## Features
+## 项目描述
 
-- Java/Smali dual-view editing and conversion
-- Workspace-based project organization (multiple workspaces)
-- Package-folder tree support (create/move/copy/rename/delete)
-- Search/replace with workspace scope and highlight
-- Dependency import and preview (JAR/DEX)
-- DEX export (project-own `classes.dex`)
+Java2Smali 主要用于在手机端完成以下工作流：
 
-## Build
+1. 编写/编辑 Java 代码
+2. 一键转换并查看 Smali
+3. 在工作区与包结构中组织源码
+4. 导入并浏览第三方依赖（JAR/DEX）
+5. 导出当前项目自己的 `classes.dex`
 
-Release build (recommended):
+## 功能特性
+
+- Java / Smali 双视图编辑与切换
+- 多工作区管理（新建、切换、清空）
+- 包结构文件树（新建文件/文件夹、重命名、删除、移动、复制）
+- 搜索替换（支持工作区范围与高亮）
+- 依赖导入与浏览（JAR / DEX）
+- DEX 导出（仅导出项目自身 `classes.dex`）
+
+## 构建方式（发布构建）
 
 ```bash
 ./gradlew testReleaseUnitTest --no-daemon
 ./gradlew assembleRelease --no-daemon
 ```
 
-Generated APK path:
+默认 APK 输出路径：
 
 `app/build/outputs/apk/release/app-release-unsigned.apk`
 
-## Project Structure
+## 目录结构
 
-- `app/src/main/java/com/java2smali/` core app logic
-- `app/src/main/res/` UI resources
-- `app/src/test/` unit tests
+- `app/src/main/java/com/java2smali/`：核心业务代码
+- `app/src/main/res/`：界面与资源文件
+- `app/src/test/`：单元测试
 
-## Notes
+## 说明
 
-- Keep using release tasks for verification.
-- `local.properties` is machine-local and not versioned.
+- 推荐始终使用发布构建任务进行验证。
+- `local.properties` 为本机环境配置，不纳入版本管理。
 
-## License
+## 开源协议
 
-This project is open source. Add your preferred license file if needed.
+当前仓库已开源；如需指定协议，可补充 `LICENSE` 文件（如 MIT / Apache-2.0）。
