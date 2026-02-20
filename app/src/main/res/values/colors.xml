@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base colors -->
+    <color name="purple_200">#BB86FC</color>
+    <color name="purple_500">#6200EE</color>
+    <color name="purple_700">#3700B3</color>
+    <color name="teal_200">#03DAC5</color>
+    <color name="teal_700">#018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    
+    <!-- App theme colors -->
+    <color name="primary">#6750A4</color>
+    <color name="primary_dark">#1D192B</color>
+    <color name="secondary">#625B71</color>
+    <color name="background">#1C1B1F</color>
+    <color name="surface">#1C1B1F</color>
+    <color name="on_primary">#FFFFFF</color>
+    <color name="on_secondary">#FFFFFF</color>
+    <color name="on_background">#E6E1E5</color>
+    <color name="on_surface">#E6E1E5</color>
+    
+    <!-- Editor colors -->
+    <color name="editor_bg">#1E1E1E</color>
+    <color name="editor_line_number">#858585</color>
+    <color name="editor_current_line">#2B2B2B</color>
+    <color name="editor_selection">#4DFF0000</color>
+    <color name="editor_cursor">#AEAFAD</color>
+    
+    <!-- JEB-like yellow/amber syntax colors -->
+    <color name="syntax_keyword">#FFDD57</color>
+    <color name="syntax_type">#FFD166</color>
+    <color name="syntax_string">#4F8A57</color>
+    <color name="syntax_number">#F9C74F</color>
+    <color name="syntax_comment">#8A7B52</color>
+    <color name="syntax_directive">#FFCB3D</color>
+    <color name="syntax_register">#FFD95A</color>
+    <color name="syntax_method">#FFE08A</color>
+    <color name="syntax_field">#FFD166</color>
+
+    <!-- Bracket match highlight (bright green) -->
+    <color name="bracket_highlight_fg">#7CFF00</color>
+    <color name="bracket_highlight_bg">#3348FF00</color>
+    <color name="bracket_highlight_underline">#00FF66</color>
+    <color name="search_match_bg">#66FF0000</color>
+    <color name="search_match_border">#FFFF0000</color>
+</resources>

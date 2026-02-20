@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:fitsSystemWindows="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:navigationIcon="@drawable/ic_menu"
+            app:title="@string/app_name"
+            app:titleTextColor="@color/on_surface"
+            app:subtitleTextColor="@color/on_surface"
+            app:menu="@menu/toolbar_menu" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/fileSidebar"
+                android:layout_width="220dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:background="@color/surface">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="12dp"
+                    android:text="@string/files"
+                    android:textColor="@color/on_surface"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="8dp">
+
+                    <ImageButton
+                        android:id="@+id/btnNewFile"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:contentDescription="@string/new_file"
+                        android:src="@drawable/ic_add_file"
+                        app:tint="@color/on_surface" />
+
+                    <ImageButton
+                        android:id="@+id/btnImportJavaFile"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:contentDescription="@string/import_as_file"
+                        android:src="@drawable/ic_import_file"
+                        app:tint="@color/on_surface" />
+
+                    <ImageButton
+                        android:id="@+id/btnRenameFile"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:contentDescription="@string/new_folder"
+                        android:src="@drawable/ic_new_folder"
+                        app:tint="@color/on_surface" />
+
+                    <ImageButton
+                        android:id="@+id/btnDeleteFile"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:contentDescription="@string/new_workspace"
+                        android:src="@drawable/ic_new_workspace"
+                        app:tint="@color/on_surface" />
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/editFileFilter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_marginTop="4dp"
+                    android:hint="@string/filter_file_name"
+                    android:singleLine="true"
+                    android:textColor="@color/on_surface"
+                    android:textColorHint="@color/editor_line_number" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvFiles"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:paddingBottom="8dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="4dp"
+                    android:background="@color/surface">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipJava"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/java_mode"
+                        android:checked="true"
+                        style="@style/Widget.Material3.Chip.Filter" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipSmali"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="@string/smali_mode"
+                        style="@style/Widget.Material3.Chip.Filter" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:id="@+id/txtCursorPos"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1:1"
+                        android:textColor="@color/on_surface"
+                        android:textSize="13sp"
+                        android:paddingHorizontal="8dp"
+                        android:fontFamily="monospace" />
+                </LinearLayout>
+
+                <io.github.rosemoe.sora.widget.CodeEditor
+                    android:id="@+id/codeEditor"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@color/editor_bg"
+                    android:scrollbars="vertical|horizontal"
+                    android:fadeScrollbars="false"
+                    android:overScrollMode="ifContentScrolls" />
+
+                <LinearLayout
+                    android:id="@+id/bottomBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:background="@color/surface"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="8dp">
+
+                    <ImageButton
+                        android:id="@+id/btnUndo"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:src="@drawable/ic_undo"
+                        android:contentDescription="@string/undo"
+                        app:tint="@color/on_surface" />
+
+                    <ImageButton
+                        android:id="@+id/btnRedo"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:src="@drawable/ic_redo"
+                        android:contentDescription="@string/redo"
+                        app:tint="@color/on_surface" />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="24dp"
+                        android:layout_marginHorizontal="8dp"
+                        android:background="@color/on_surface" />
+
+                    <ImageButton
+                        android:id="@+id/btnFormat"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:src="@drawable/ic_format"
+                        android:contentDescription="@string/format"
+                        app:tint="@color/on_surface" />
+
+                    <ImageButton
+                        android:id="@+id/btnCopyView"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:src="@drawable/ic_copy_content"
+                        android:contentDescription="@string/copy_current_view"
+                        app:tint="@color/on_surface" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnConvert"
+                        style="@style/Widget.Material3.Button"
+                        android:layout_width="88dp"
+                        android:layout_height="40dp"
+                        android:text="@string/convert"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="12dp">
+
+    <EditText
+        android:id="@+id/editSearchQuery"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/search_query"
+        android:singleLine="true" />
+
+    <EditText
+        android:id="@+id/editReplaceText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="@string/replace_with"
+        android:singleLine="true" />
+
+    <CheckBox
+        android:id="@+id/checkIgnoreCase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/ignore_case" />
+
+    <CheckBox
+        android:id="@+id/checkWorkspace"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/workspace_scope" />
+</LinearLayout>
