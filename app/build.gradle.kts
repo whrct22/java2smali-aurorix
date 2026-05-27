@@ -65,6 +65,7 @@ dependencies {
     implementation(libs.dexlib2)
     implementation(libs.janino)
     implementation(libs.asm)
+    implementation(libs.asm.tree)
 
     implementation(libs.sora.editor)
     implementation(libs.sora.language.java)

@@ -42,6 +42,7 @@ baksmali = { group = "org.smali", name = "baksmali", version.ref = "baksmali" }
 dexlib2 = { group = "org.smali", name = "dexlib2", version.ref = "dexlib2" }
 janino = { group = "org.codehaus.janino", name = "janino", version = "3.1.12" }
 asm = { group = "org.ow2.asm", name = "asm", version = "9.7.1" }
+asm-tree = { group = "org.ow2.asm", name = "asm-tree", version = "9.7.1" }
 
 # Editor
 sora-editor = { group = "io.github.Rosemoe.sora-editor", name = "editor", version.ref = "soraEditor" }
